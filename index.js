@@ -34,7 +34,7 @@ ntpClient.getNetworkTime("pool.ntp.org", 123, function(err, date) {
     if (Math.abs(sysdate - date) > 1 * 60 * 1000) { // If skew is bigger than 1000
       console.log(art.style(rendered, 'blue_bg+red'));
       console.log('');
-      console.log("Skew:", Math.round(Math.abs(sysdate - date) / 1000), "sec.");
+      console.log(art.style("Skew: " + Math.round(Math.abs(sysdate - date) / 1000) + " sec.", 'blue_bg+red'));
     }
     else {
       console.log(rendered);
