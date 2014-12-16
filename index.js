@@ -23,7 +23,7 @@ ntpClient.getNetworkTime("pool.ntp.org", 123, function(err, date) {
 
     var sysdate = new Date();
   // Manually add a timeskew
-  sysdate = new Date(sysdate - 28000);
+  sysdate = new Date(sysdate - 28000 * 1000);
   
     //console.log("Current time : ", date);
     //console.log("System Time : ", sysdate);
