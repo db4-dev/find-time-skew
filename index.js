@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 // Main file
 
 var art = require('ascii-art'),
@@ -16,19 +17,12 @@ function formatDate(d) {
 }
 
 ntpClient.getNetworkTime("pool.ntp.org", 123, function(err, date) {
-    if(err) {
-        console.error(err);
-        return;
-    }
+  if(err) {
+    console.error(err);
+    return;
+  }
 
-    var sysdate = new Date();
-  // Manually add a timeskew
-  sysdate = new Date(sysdate - 28000 * 1000);
-  
-    //console.log("Current time : ", date);
-    //console.log("System Time : ", sysdate);
-  
-    
+  var sysdate = new Date();
   
   art.font(formatDate(date), 'Doom', function(rendered) {
     if (Math.abs(sysdate - date) > 1 * 60 * 1000) { // If skew is bigger than 1000
