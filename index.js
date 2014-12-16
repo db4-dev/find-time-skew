@@ -1,5 +1,7 @@
 // Main file
 
+console.log("Hello from Travis");
+
 var art = require('ascii-art'); 
 
 art.font('Demo!', 'Doom', function(rendered){ 
