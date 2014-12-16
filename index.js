@@ -22,6 +22,8 @@ ntpClient.getNetworkTime("pool.ntp.org", 123, function(err, date) {
     }
 
     var sysdate = new Date();
+  // Manually add a timeskew
+  sysdate = new Date(sysdate - 2*60*1000);
   
     console.log("Current time : ", date);
     console.log("System Time : ", sysdate);
@@ -29,7 +31,7 @@ ntpClient.getNetworkTime("pool.ntp.org", 123, function(err, date) {
     console.log("Skew: ", Math.abs(sysdate - date));
   
   art.font(formatDate(date), 'Doom', function(rendered) {
-    if (Math.abs(sysdate - date) < 1 * 60 * 1000) { // If skew is bigger than 1000
+    if (Math.abs(sysdate - date) > 1 * 60 * 1000) { // If skew is bigger than 1000
       console.log(art.style(rendered, 'blue_bg+red'));
     }
     else {
