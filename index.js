@@ -47,7 +47,7 @@ ntpClient.getNetworkTime("pool.ntp.org", 123, function(err, date) {
   
     console.log("Skew: ", (sysdate - date));
   
-  art.font(formatDate(d), 'Doom', function(rendered) {
+  art.font(formatDate(date), 'Doom', function(rendered) {
     console.log(rendered);
   });
 });
