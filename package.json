@@ -20,5 +20,6 @@
         
     },
     "private": true,
-    "license": "Affero GPL v3"
+    "license": "Affero GPL v3",
+    "bin" : { "timeskew" : "./index.js" }
 }
